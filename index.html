@@ -1,0 +1,83 @@
+<!-- HTML document declaration -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Metadata section -->
+    <meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Set compatibility with Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Set viewport for responsive design -->
+    <title>Video Dubbing App</title> <!-- Set page title -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+</head>
+
+
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <h1>Auto Dubbing System</h1> <!-- Heading for the page -->
+
+
+        <!-- Upload Page section -->
+        <div id="uploadPage">
+            <form id="uploadForm" enctype="multipart/form-data"> <!-- Form for video upload -->
+                <label for="file">Upload Video:</label> <!-- Label for file input -->
+                <input type="file" id="file" name="file" accept="video/*" required> <!-- File input for video selection -->
+
+
+                <label for="targetLanguage">Target Language:</label> <!-- Label for target language dropdown -->
+                <select id="targetLanguage" name="targetLanguage" required>
+                    <!-- Dropdown options for target language -->
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+
+
+                <label for="googleVoices">Google Voices:</label> <!-- Label for Google voices dropdown -->
+                <select id="googleVoices" name="googleVoices">
+                    <!-- Dropdown options for Google voices -->
+                    <option value="en-US-Wavenet-D">English - US Female</option>
+                    <option value="es-ES-Wavenet-D">Spanish - Spain Female</option>
+                    <option value="fr-FR-Wavenet-D">French - France Female</option>
+                    <option value="de-DE-Wavenet-D">German - Germany Female</option>
+                </select>
+
+
+                <button type="button" onclick="startDubbing()">Start Dubbing</button> <!-- Button to start dubbing process -->
+            </form>
+
+
+            <!-- Loading Spinner or Progress Bar section -->
+            <div id="loading" style="display:none;">
+                <!-- Placeholder for loading spinner or progress bar (not provided) -->
+                <!-- Example: <div class="spinner"></div> -->
+            </div>
+
+
+            <!-- Inform users about processing time section -->
+            <p id="processingInfo" style="display:none;">The dubbing process may take some time. Please be patient.</p>
+        </div>
+
+
+        <!-- Results Page section -->
+        <div id="resultsPage" style="display:none;">
+            <!-- Display links or previews of dubbed videos section -->
+            <div id="videoLinks"></div>
+
+
+            <!-- Download Button section -->
+            <button type="button" onclick="downloadZip()">Download All Dubbed Videos</button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script> <!-- Link to external JavaScript file -->
+</body>
+
+
+</html>
+
+
